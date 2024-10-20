@@ -35,7 +35,11 @@ const addGenre = async (req, res) => {
 const updateGenre = (req, res) => res.send("hello World!");
 
 // Delete genre by ID
-const deleteGenre = (req, res) => res.send("hello World!");
+const deleteGenre = async (req, res) => {
+    const genre = await Genre.findById(req.params.genereId);
+    await genre.deleteOne();
+    res.json(genre);
+};
 
 module.exports = {
   getAllGenres,
