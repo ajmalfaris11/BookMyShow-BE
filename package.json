@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/ajmalfaris11/BookMyShow-BE/issues"
   },
-  "homepage": "https://github.com/ajmalfaris11/BookMyShow-BE#readme"
+  "homepage": "https://github.com/ajmalfaris11/BookMyShow-BE#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
 }
