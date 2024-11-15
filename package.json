@@ -1,0 +1,27 @@
+{
+  "name": "bookmyshow-be",
+  "version": "1.0.0",
+  "description": "Back-end implementation for the BookMyShow clone project, developed as part of the Entri education platform course. Built with Node.js, Express.js, and MongoDB to handle user authentication, movie data management, and ticket bookings via RESTful APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajmalfaris11/BookMyShow-BE.git"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "javascript",
+    "api",
+    "backend",
+    "server"
+  ],
+  "author": "Ajmal Faris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajmalfaris11/BookMyShow-BE/issues"
+  },
+  "homepage": "https://github.com/ajmalfaris11/BookMyShow-BE#readme"
+}
