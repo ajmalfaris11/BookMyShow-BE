@@ -11,7 +11,7 @@ const router = express.Router();
 router.get('/', (req, res) => res.send("hello world"))
 
 // get genre by id
-router.get('/genre/:genereId', (req,res) => res.send("hello world"))
+router.get('/:genereId', (req,res) => res.send("hello world"))
 
 // add genre 
 router.post('/', (req, res) => res.send("hello world"))

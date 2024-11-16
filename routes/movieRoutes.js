@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 // 2 - Get Movie by ID
 
-router.get('/movies/:movieId', (req, res) => {
+router.get('/:movieId', (req, res) => {
   res.send('hello World!');
 });
 
