@@ -1,5 +1,6 @@
 //  import the express modules
-const express = require('express')
+const express = require('express');
+const { getAllGenre, getGenre, updateGenred, deleteGenre, updateGenre } = require('../controllers/genreControllers');
 // initialize the router instents
 const router = express.Router();
 
@@ -8,19 +9,19 @@ const router = express.Router();
 // === define the routers ===
 
 // get all genre
-router.get('/', (req, res) => res.send("hello world"))
+router.get('/', getAllGenre)
 
 // get genre by id
-router.get('/:genereId', (req,res) => res.send("hello world"))
+router.get('/:genereId', getGenre)
 
 // add genre 
-router.post('/', (req, res) => res.send("hello world"))
+router.post('/', )
 
 // update genre
-router.patch("/:genereId", (req, res) => res.send("hello world"))
+router.patch("/:genereId", updateGenre)
 
 // delete  genre
-router.delete("/:genereId", (req, res) => res.send("hello world"))
+router.delete("/:genereId", deleteGenre)
 
 
 // export the router
