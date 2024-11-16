@@ -7,19 +7,19 @@ const router = express.Router();
 
 // === define the routers ===
 
-// get all movie
+// get all genre
 router.get('/', (req, res) => res.send("hello world"))
 
-// get movie by id
+// get genre by id
 router.get('/genre/:genereId', (req,res) => res.send("hello world"))
 
-// add movie 
+// add genre 
 router.post('/', (req, res) => res.send("hello world"))
 
-// update movie
+// update genre
 router.patch("/:genereId", (req, res) => res.send("hello world"))
 
-// delete  movie
+// delete  genre
 router.delete("/:genereId", (req, res) => res.send("hello world"))
 
 
