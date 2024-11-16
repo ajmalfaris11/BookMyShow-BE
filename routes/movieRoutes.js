@@ -1,34 +1,32 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const {
+  getAllMovies,
+  addMovie,
+  updateMovie,
+  deleteMovie,
+} = require("../controllers/movieControllers");
+const router = express.Router();
 
 // 1 - Get all movies
 
-router.get('/', (req, res) => {
-    res.send('Hello World!')
-  })
+router.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 // 2 - Get Movie by ID
 
-router.get('/:movieId', (req, res) => {
-  res.send('hello World!');
-});
+router.get("/:movieId", getAllMovies);
 
 // 3 - Add Movie
 
-router.post('/', (req, res) => {
-  res.send('hello world!')
-})
+router.post("/", addMovie);
 
 // 4 - Update Movie
 
-router.patch('/:movieId', (req, res) => {
-  res.send('hello world')
-})
+router.patch("/:movieId", updateMovie);
 
 // 5 - Delete Movie
 
-router.delete('/:movieId', (req, res) => {
-  res.send('hello world')
-})
+router.delete("/:movieId", deleteMovie);
 
-module.exports = router
+module.exports = router;
