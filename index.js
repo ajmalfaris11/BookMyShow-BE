@@ -1,5 +1,6 @@
 const express = require ('express')
 const cors = require('cors')
+const mongoose = require('mongoose'); // Import the mongoose library for MongoDB connection
 
 const movieRoutes = require('./routes/movieRoutes')
 const genreRoutes = require('./routes/genreRoutes')
@@ -29,3 +30,18 @@ app.use('/genre', genreRoutes); // All routes in `router` are prefixed with `/ge
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
+
+
+// ===== DataBase ===== DataBase ===== DataBase =====
+
+// Calling the main async function to establish a connection and log success or failure
+main().then(console.log("connected")).catch(err => console.log(err));
+
+// Define an asynchronous function to connect to MongoDB
+async function main() { 
+  // MongoDB connection string with placeholders for user credentials
+  // Replace <db_password> with the actual password for the database
+  await mongoose.connect('mongodb+srv://AjmalBMS:<db_password>@cluster0.g1wpj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+}
