@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/movies', movieRoutes); // All routes in `router` are prefixed with `/movies`
-app.use('/genre', genreRoutes); // All routes in `router` are prefixed with `/genre`
+app.use('/genres', genreRoutes); // All routes in `router` are prefixed with `/genre`
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
@@ -37,11 +37,22 @@ app.listen(port, () => {
 // ===== DataBase ===== DataBase ===== DataBase =====
 
 // Calling the main async function to establish a connection and log success or failure
-main().then(console.log("connected")).catch(err => console.log(err));
+main()
+    .then(() => console.log("connected")) // Log message only after a successful connection
+    .catch((err) => console.log("Connection failed:", err));
 
 // Define an asynchronous function to connect to MongoDB
 async function main() { 
-  // MongoDB connection string with placeholders for user credentials
-  // Replace <db_password> with the actual password for the database
-  await mongoose.connect('mongodb+srv://AjmalBMS:<db_password>@cluster0.g1wpj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+    // MongoDB connection string with actual credentials and URL encoded password
+    const uri = 'mongodb+srv://AjmalBMS:skJ%23eb-49SY%2A5Sp@cluster0.g1wpj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+    try {
+        // Connect to MongoDB
+        await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    } catch (err) {
+        // Handle connection failure
+        console.log("Error during connection:", err);
+        throw err;
+    }
 }
+

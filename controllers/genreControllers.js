@@ -1,7 +1,13 @@
 // Controller functions for genre-related operations
 
+const Genre = require("../models/genreModel");
+
+
 // Get all genres
-const getAllGenre = (req, res) => res.send('hello World!') ;
+const getAllGenres = async (req, res) => {
+    const genres = await Genre.find({});
+    res.json(genres)
+} 
 
 // Get a genre by ID
 const getGenre = (req, res) => res.send('hello World!') ;
@@ -16,7 +22,7 @@ const updateGenre = (req, res) => res.send('hello World!') ;
 const deleteGenre = (req, res) => res.send('hello World!') ;
 
 module.exports = {
-    getAllGenre,
+    getAllGenres,
     getGenre,
     addGenre,
     updateGenre,
