@@ -4,18 +4,17 @@ const {
   addMovie,
   updateMovie,
   deleteMovie,
+  getMovie,
 } = require("../controllers/movieControllers");
 const router = express.Router();
 
 // 1 - Get all movies
 
-router.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+router.get("/", getAllMovies);
 
 // 2 - Get Movie by ID
 
-router.get("/:movieId", getAllMovies);
+router.get("/:movieId", getMovie);
 
 // 3 - Add Movie
 

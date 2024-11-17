@@ -26,6 +26,7 @@
   "homepage": "https://github.com/ajmalfaris11/BookMyShow-BE#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "mongoose": "^8.8.1"
   }
 }

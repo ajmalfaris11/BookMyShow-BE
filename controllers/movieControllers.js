@@ -1,7 +1,7 @@
 // Controller functions for movie-related operations
 
 // Get all movies
-const getAllMovies = (req, res) => res.send('hello World!') ;
+const getAllMovies = (req, res) => res.send('all movies here') ;
 
 // Get a movie by ID
 const getMovie = (req, res) => res.send('hello World!') ;
