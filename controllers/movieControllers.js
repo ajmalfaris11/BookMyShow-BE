@@ -1,7 +1,12 @@
 // Controller functions for movie-related operations
 
+const Movie = require("../models/movieModel");
+
 // Get all movies
-const getAllMovies = (req, res) => res.send('all movies here') ;
+const getAllMovies = async (req, res) => {
+    const genres = await Movie.find({});
+    res.json(genres)
+}
 
 // Get a movie by ID
 const getMovie = (req, res) => res.send('hello World!') ;
