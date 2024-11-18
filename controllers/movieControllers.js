@@ -12,7 +12,17 @@ const getAllMovies = async (req, res) => {
 const getMovie = (req, res) => res.send('hello World!') ;
 
 // Add a new movie
-const addMovie = (req, res) => res.send('hello World!') ;
+const addMovie = async (req, res) => {
+    // 1. Get movie data
+    const movieData = req.body;
+    // 2. Create document with data
+    const movie = new Movie(movieData)
+    // 3. Save document with the data
+    await movie.save();
+    // 4. Send document as response
+    res.json(movie);
+
+} ;
 
 // Update movie by ID
 const updateMovie = (req, res) => res.send('hello World!') ;
