@@ -9,7 +9,10 @@ const getAllMovies = async (req, res) => {
 }
 
 // Get a movie by ID
-const getMovie = (req, res) => res.send('hello World!') ;
+const getMovie = async (req, res) => {
+   const movie = await Movie.findById(req.params.movieId).exec();
+   res.json(movie)
+};
 
 // Add a new movie
 const addMovie = async (req, res) => {
