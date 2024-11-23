@@ -38,7 +38,7 @@ app.listen(port, () => {
 
 // Calling the main async function to establish a connection and log success or failure
 main()
-    .then(() => console.log("connected")) // Log message only after a successful connection
+    .then(() => console.log("Connected to MongoDB successfully"))
     .catch((err) => console.log("Connection failed:", err));
 
 // Define an asynchronous function to connect to MongoDB
@@ -47,12 +47,11 @@ async function main() {
     const uri = 'mongodb+srv://AjmalBMS:skJ%23eb-49SY%2A5Sp@cluster0.g1wpj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
     try {
-        // Connect to MongoDB
-        await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+        // Connect to MongoDB (No need for deprecated options)
+        await mongoose.connect(uri);
     } catch (err) {
         // Handle connection failure
         console.log("Error during connection:", err);
         throw err;
     }
 }
-
