@@ -34,6 +34,18 @@ const movieSchema = new mongoose.Schema({
     type: Boolean, // On/Off option for UA (Universal Approval)
     default: false,
   },
+
+  promoted: {
+    type: Boolean,
+    default: false,
+  },
+
+  status: {
+    type: String,
+    enum: ["Running", "Coming"], // Limits status to these two values
+    required: true,
+  },
+
   movieTiming: {
     type: [String], // Array of strings for show timings
     required: false,
