@@ -44,7 +44,7 @@ main()
 // Define an asynchronous function to connect to MongoDB
 async function main() { 
     // MongoDB connection string with actual credentials and URL encoded password
-    const uri = 'mongodb+srv://AjmalBMS:skJ%23eb-49SY%2A5Sp@cluster0.g1wpj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+    const uri = 'mongodb+srv://AjmalBMS:itsMeAju@cluster0.g1wpj.mongodb.net/';
 
     try {
         // Connect to MongoDB (No need for deprecated options)
